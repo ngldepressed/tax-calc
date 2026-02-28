@@ -1,0 +1,71 @@
+:root {
+    --primary: #1a5632; /* IRS Green */
+    --accent: #fdbb30;
+    --text: #1e293b;
+    --bg: #f1f5f9;
+}
+
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); margin: 0; color: var(--text); line-height: 1.6; }
+
+nav { background: white; border-bottom: 1px solid #cbd5e1; padding: 15px 0; }
+.nav-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 20px; }
+.nav-links a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 600; }
+
+.container { max-width: 1000px; margin: 40px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; padding: 0 20px; }
+
+.main-card, .sidebar { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+h1 { color: var(--primary); margin: 0 0 10px 0; }
+.subtitle { color: #64748b; margin-bottom: 30px; }
+
+.input-group { margin-bottom: 20px; }
+label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+input, select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+
+.calc-btn { background: var(--primary); color: white; width: 100%; padding: 16px; border: none; border-radius: 8px; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+.calc-btn:hover { background: #144326; }
+
+.result-box { display: none; margin-top: 30px; border-top: 2px dashed #e2e8f0; padding-top: 20px; }
+.res-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+.total-tax { font-size: 24px; font-weight: 800; color: #b91c1c; border: none; }
+
+.affiliate-banner { background: #fffbeb; border: 1px solid var(--accent); padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
+.cta-btn { display: inline-block; background: #000; color: #fff; padding: 10px 25px; border-radius: 5px; text-decoration: none; margin-top: 10px; font-weight: bold; }
+
+.article-link { display: block; padding: 12px 0; color: var(--text); text-decoration: none; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+.article-link:hover { color: var(--primary); font-weight: bold; }
+
+.disclaimer { text-align: center; padding: 40px; color: #94a3b8; font-size: 12px; }
+
+@media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
+
+.container {
+    display: grid;
+    /* This creates two columns: the first grows (1fr), the second stays fixed (300px) */
+    grid-template-columns: 1fr 300px; 
+    gap: 40px; /* Space between the article and sidebar */
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the entire container on the screen */
+    padding: 20px;
+}
+
+.main-card {
+    /* Ensures the article starts at the beginning of the grid */
+    grid-column: 1;
+}
+
+.sidebar {
+    grid-column: 2;
+    /* Keeps the sidebar from being too squished */
+    min-width: 250px;
+}
+
+/* Mobile Responsive: Stack them on top of each other on small screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        grid-column: 1;
+    }
+}

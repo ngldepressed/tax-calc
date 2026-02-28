@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 USA Tax Calculator | OBBB Act Updated</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-content">
+        <strong>TaxPlan2026</strong>
+        <div class="nav-links">
+            <a href="index.html">Calculator</a>
+            <a href="#articles">Guides</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+   <main class="main-card">
+    <h1>Advanced 2026 Tax Estimator</h1>
+    
+    <div class="form-section">
+        <h3>1. Filing Details</h3>
+        <div class="input-grid">
+            <div class="input-group">
+                <label>Filing Status</label>
+                <select id="status">
+                    <option value="single">Single</option>
+                    <option value="married">Married Filing Jointly</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Are you 65 or older?</label>
+                <select id="isSenior">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>2. Income Breakdown (2026 Rules)</h3>
+        <div class="input-group">
+            <label>Annual Base Salary ($)</label>
+            <input type="number" id="income" placeholder="70000">
+        </div>
+        <div class="input-grid">
+            <div class="input-group">
+                <label>Annual Overtime Pay ($)</label>
+                <input type="number" id="overtime" value="0">
+                <small>OBBB Act: Federal Tax-Free (if applicable)</small>
+            </div>
+            <div class="input-group">
+                <label>Annual Tips ($)</label>
+                <input type="number" id="tips" value="0">
+                <small>OBBB Act: Federal Tax-Free (if applicable)</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>3. Families & Credits</h3>
+        <div class="input-group">
+            <label>Number of Qualifying Children (under 17)</label>
+            <input type="number" id="children" value="0">
+
+            <label for="otherDependents">Number of Other Dependents (non-qualifying children, elderly, relatives)</label>
+            <input type="number" id="otherDependents" min="0" max="10" value="0">
+        </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculateAdvancedTax()">Calculate My 2026 Estimate</button>
+
+    <div id="calculatorContainer">
+        <div id="result" class="result-box"></div>
+        <div id="obbbArticle"></div>
+    </div>
+</main>
+
+    <aside class="sidebar">
+        <h3>2026 Tax Learning Center</h3>
+        <div id="articles">
+            <!-- UPDATED LINK -->
+                   <a href="blog/how-obbb-affects-2026.html">
+                    How obbb affects 2026 
+
+                   </a> 
+                
+           
+
+            <a href="standard-deduction-2026.html" class="article-link">
+                The New $16,100 Standard Deduction
+            </a>
+
+            <a href="salt-cap-update.html" class="article-link">
+                New $40,000 SALT Cap for Homeowners
+            </a>
+        </div>
+    </aside>
+</div>
+
+<footer class="disclaimer">
+    <p>
+        Disclaimer: This tool provides general tax estimates for informational purposes only 
+        and does not constitute tax, legal, or financial advice. 
+        Always consult IRS guidance or a qualified tax professional.
+    </p>
+</footer>
+
+<footer class="disclaimer">
+© 2026 TaxPlan2026 |
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms</a> |
+<a href="about.html">About</a> |
+<a href="contact.html">Contact</a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
